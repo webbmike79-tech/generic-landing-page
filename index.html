@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Business Name | Your City, ST</title>
     <meta name="description" content="One-page responsive landing page template for a local service business.">
+    <meta property="og:title" content="Your Business Name | Your City, ST">
+    <meta property="og:description" content="Quality craftsmanship and dependable service. Get a free estimate today.">
+    <meta property="og:type" content="website">
     <style>
         :root {
             /* Brand colors - swap these for your own */
@@ -200,13 +203,18 @@
 </head>
 <body>
     <header>
-        <!-- Replace with your own logo file -->
-        <img src="logo.png" alt="Your Business Name Logo">
+        <!-- Inline SVG logo lockup - replace with your own logo file if you prefer -->
+        <svg width="320" height="64" viewBox="0 0 320 64" role="img" aria-label="Your Business Name logo">
+            <rect x="2" y="2" width="60" height="60" rx="8" fill="#1B2A47"/>
+            <text x="32" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#C8102E" font-weight="bold">YB</text>
+            <text x="74" y="30" font-family="Georgia, serif" font-size="22" fill="#1B2A47" font-weight="bold">Your Business Name</text>
+            <text x="74" y="50" font-family="Segoe UI, sans-serif" font-size="12" fill="#666">YOUR CITY, ST &bull; LICENSED &amp; INSURED</text>
+        </svg>
     </header>
     <section class="hero">
         <h1>Quality Craftsmanship & Dependable Service</h1>
         <p>"Your tagline goes here — one line that tells customers what you stand for."</p>
-        <a href="#contact" class="btn">Get a Free Estimate</a>
+        <a href="#quote" class="btn">Get a Free Estimate</a>
     </section>
     <section class="section" id="about">
         <h2>Years of Experience You Can Trust</h2>
@@ -236,12 +244,12 @@
             <h2>Recent Projects</h2>
             <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem;">Swap these placeholders for photos of your own work.</p>
             <div class="grid gallery-grid">
-                <img src="https://placehold.co/400x300/1B2A47/FFFFFF?text=Project+1" alt="Project photo 1">
-                <img src="https://placehold.co/400x300/1B2A47/FFFFFF?text=Project+2" alt="Project photo 2">
-                <img src="https://placehold.co/400x300/1B2A47/FFFFFF?text=Project+3" alt="Project photo 3">
-                <img src="https://placehold.co/400x300/1B2A47/FFFFFF?text=Project+4" alt="Project photo 4">
-                <img src="https://placehold.co/400x300/1B2A47/FFFFFF?text=Project+5" alt="Project photo 5">
-                <img src="https://placehold.co/400x300/1B2A47/FFFFFF?text=Project+6" alt="Project photo 6">
+                <img src="https://picsum.photos/seed/landingproj1/400/300" alt="Project photo 1">
+                <img src="https://picsum.photos/seed/landingproj2/400/300" alt="Project photo 2">
+                <img src="https://picsum.photos/seed/landingproj3/400/300" alt="Project photo 3">
+                <img src="https://picsum.photos/seed/landingproj4/400/300" alt="Project photo 4">
+                <img src="https://picsum.photos/seed/landingproj5/400/300" alt="Project photo 5">
+                <img src="https://picsum.photos/seed/landingproj6/400/300" alt="Project photo 6">
             </div>
         </div>
     </section>
@@ -262,6 +270,39 @@
             </div>
         </div>
     </section>
+    <section class="section" id="quote" style="background-color: var(--grey); max-width: 100%;">
+        <div style="max-width: 700px; margin: 0 auto;">
+            <h2>Request a Free Estimate</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Fill this out and we'll get back to you shortly.</p>
+            <form id="quote-form" style="display: grid; gap: 15px;">
+                <input type="text" id="q-name" placeholder="Your name" required style="padding: 12px; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;">
+                <input type="tel" id="q-phone" placeholder="Phone number" required style="padding: 12px; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;">
+                <input type="email" id="q-email" placeholder="Email address" style="padding: 12px; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;">
+                <select id="q-service" style="padding: 12px; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;">
+                    <option>Service One</option>
+                    <option>Service Two</option>
+                    <option>Service Three</option>
+                    <option>Something else</option>
+                </select>
+                <textarea id="q-details" placeholder="Tell us about your project..." rows="4" style="padding: 12px; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                <button type="submit" class="btn" style="border: none; cursor: pointer;">Send Request</button>
+                <p style="font-size: 0.85rem; color: #666; text-align: center;">No backend hooked up yet &mdash; submitting opens your email app with the details filled in. Connect this form to a service like Formspree or Jotform to receive submissions directly.</p>
+            </form>
+        </div>
+    </section>
+    <script>
+    document.getElementById('quote-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var body = 'Name: ' + document.getElementById('q-name').value + '\n'
+            + 'Phone: ' + document.getElementById('q-phone').value + '\n'
+            + 'Email: ' + document.getElementById('q-email').value + '\n'
+            + 'Service: ' + document.getElementById('q-service').value + '\n\n'
+            + 'Project details:\n' + document.getElementById('q-details').value;
+        window.location.href = 'mailto:you@yourbusiness.com'
+            + '?subject=' + encodeURIComponent('Quote request from ' + document.getElementById('q-name').value)
+            + '&body=' + encodeURIComponent(body);
+    });
+    </script>
     <footer id="contact">
         <div class="footer-content">
             <div class="contact-info">
