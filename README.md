@@ -13,8 +13,9 @@ Just open `index.html` in any browser. That's it.
 ## Customize
 
 - Replace the `:root` color variables with your brand colors.
-- Drop your logo in as `logo.png` next to `index.html`.
-- Swap the "Recent Projects" gallery placeholders for real photos.
-- Replace the sample reviews, services, and contact details with your own.
+- The header logo is an inline SVG lockup — swap it for your own logo file if you prefer.
+- The quote form submits via `mailto:` by default; point it at Formspree/Jotform
+  (or your own endpoint) and change `you@yourbusiness.com` to your address.
+- Swap the "Recent Projects" gallery photos for your own work.
 
 Footer credit: "Created by Speakeasy Support".
