@@ -1,19 +1,20 @@
-# Tejada's Remodeling & Handyman — Landing Page
+# Generic Landing Page
 
-A single-file responsive landing page for Tejada's Remodeling & Handyman
-Service (Eastland, TX), built with Gemini from their Thumbtack profile.
+A single-file responsive landing page template for a local service business.
 Pure HTML + inline CSS — no frameworks, no JavaScript, no build step.
+
+Originally built for a remodeling/handyman client; scrubbed to generic
+placeholder content so it works as a starting template for any business.
 
 ## Run it
 
 Just open `index.html` in any browser. That's it.
 
-## Notes
+## Customize
 
-- Place the logo image in this folder with the exact filename
-  `95865996-a925-4511-b9ad-e551947c8218` (no extension) for the header logo.
-- The "Recent Projects" gallery currently uses placeholder images — swap in
-  real project photos.
-- Footer credits "Created by Speakeasy Support" with a link back.
+- Replace the `:root` color variables with your brand colors.
+- Drop your logo in as `logo.png` next to `index.html`.
+- Swap the "Recent Projects" gallery placeholders for real photos.
+- Replace the sample reviews, services, and contact details with your own.
 
-Recovered verbatim from a Gemini chat; original code unmodified.
+Footer credit: "Created by Speakeasy Support".
